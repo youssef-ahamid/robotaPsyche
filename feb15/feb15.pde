@@ -40,6 +40,9 @@ class FlowField {
       for (int j = 0; j < rows; j++) {
         float theta = atan((i-center.x)/(j-center.y));
         field[i][j] = new PVector(sin(theta), cos(theta));
+        if(j>=center.y) {
+          field[i][j].mult(-1);
+        }
       }
     }
   }
